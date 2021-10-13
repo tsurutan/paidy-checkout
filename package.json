@@ -1,0 +1,22 @@
+{
+  "name": "paidy-coding-interview",
+  "version": "0.0.1",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "test",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsurutan/paidy-coding-interview.git"
+  },
+  "author": "tsurutan",
+  "license": "UNLICENSED",
+  "homepage": "https://github.com/tsurutan/paidy-coding-interview#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^5.3.2",
+    "webpack": "^5.58.1",
+    "webpack-cli": "^4.9.0"
+  }
+}
