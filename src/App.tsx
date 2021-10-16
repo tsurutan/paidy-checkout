@@ -1,3 +1,4 @@
+import { HomePage } from 'components/pages';
 import { VFC } from 'react';
 
-export const App: VFC = () => (<div>App</div>);
+export const App: VFC = () => <HomePage />;

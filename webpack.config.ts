@@ -1,4 +1,5 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 import path from 'path';
 import { Configuration } from 'webpack';
 
@@ -11,7 +12,8 @@ const config: Configuration = {
   },
   plugins: [new HtmlWebpackPlugin()],
   resolve: {
-    extensions: ['.ts', '.tsx', '.js'],
+    extensions: ['.ts', '.tsx', '.js', '.scss', '.css'],
+    plugins: [new TsconfigPathsPlugin()],
   },
   module: {
     rules: [
@@ -19,6 +21,19 @@ const config: Configuration = {
         test: /\.tsx?$/,
         exclude: /(node_modules|dist)/,
         use: 'babel-loader',
+      },
+      {
+        test: /\.scss$/i,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+            },
+          },
+          'sass-loader',
+        ],
       },
     ],
   },
