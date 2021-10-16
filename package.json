@@ -8,6 +8,7 @@
     "dev": "webpack-dev-server --config webpack.config.dev.ts",
     "build": "webpack",
     "watch-scss": "tsm src --watch",
+    "gen:component": "hygen new component",
     "prepare": "husky install"
   },
   "repository": {
@@ -39,6 +40,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "html-webpack-plugin": "^5.3.2",
     "husky": "^7.0.2",
+    "hygen": "^6.1.0",
     "lint-staged": "^11.2.3",
     "node-sass": "^4.14.1",
     "prettier": "^2.4.1",
