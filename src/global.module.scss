@@ -1,0 +1,20 @@
+@use '~components/mixins.module.scss' as *;
+
+// To use rem, set up the root font-size
+html {
+  font-size: 62.5%; // 10px
+
+  @include tablet {
+    font-size: 56.25%; // 9px
+  }
+
+  @include phone {
+    font-size: 50%; // 8px
+  }
+}
+
+// Set font size html, but it maybe too small,
+// So reset font-size to 1.6 * (10px or 9 px or 8px)
+body {
+  font-size: 1.6em;
+}

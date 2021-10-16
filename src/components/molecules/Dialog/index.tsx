@@ -12,11 +12,8 @@ export const Dialog: VFC<Props> = ({ children, onClose, isOpen }) => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.background} />
+      <div className={styles.background} onClick={onClose} role="none" />
       <div className={styles.content} role="dialog">
-        <button onClick={onClose} type="button">
-          close
-        </button>
         {children}
       </div>
     </div>
