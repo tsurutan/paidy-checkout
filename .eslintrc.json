@@ -1,0 +1,46 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb",
+        "plugin:jsx-a11y/recommended",
+        "plugin:react-form-fields/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "settings": {
+      "import/resolver": {
+        "typescript": {} 
+      }
+    },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint"
+    ],
+    "rules": {
+      "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.ts", "*.config.ts", "*.config.dev.ts"]}],
+      "react/jsx-filename-extension": ["error", { "extensions": [".tsx", ".jsx"] }],
+      "react/jsx-uses-react": "off",
+      "react/react-in-jsx-scope": "off",
+      "import/extensions": [
+        "error",
+        "ignorePackages",
+        {
+          "js": "never",
+          "jsx": "never",
+          "ts": "never",
+          "tsx": "never"
+        }
+     ],
+      "import/prefer-default-export": "off"
+    }
+}

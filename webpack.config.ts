@@ -1,4 +1,4 @@
-import HtmlWebpackPlugin from "html-webpack-plugin";
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
 import { Configuration } from 'webpack';
 
@@ -11,7 +11,7 @@ const config: Configuration = {
   },
   plugins: [new HtmlWebpackPlugin()],
   resolve: {
-    extensions: [".ts", ".tsx", ".js"],
+    extensions: ['.ts', '.tsx', '.js'],
   },
   module: {
     rules: [
@@ -19,9 +19,9 @@ const config: Configuration = {
         test: /\.tsx?$/,
         exclude: /(node_modules|dist)/,
         use: 'babel-loader',
-      }
-    ]
-  }
+      },
+    ],
+  },
 };
 
 export default config;
