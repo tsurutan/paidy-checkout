@@ -1,4 +1,4 @@
-import { PrimaryButton } from 'components/atoms';
+import { CircleImage, PrimaryButton, PrimaryLink } from 'components/atoms';
 import { Dialog, InputWithLabel } from 'components/molecules';
 import { Ids } from 'consts';
 import { useInput } from 'hooks';
@@ -17,6 +17,13 @@ export const CheckoutDialog: VFC<Props> = ({ isOpen, onClose }) => {
 
   return (
     <Dialog isOpen={isOpen} onClose={onClose}>
+      <div className={styles.header}>
+        <div className={styles.itemInformation}>
+          <p className={styles.itemTitle}>SHOP NAME</p>
+          <p className={styles.itemPrice}>￥ 99,999</p>
+        </div>
+        <CircleImage imageUrl="/logos/paidy.png" alt="paidy logo" className={styles.paidyLogo} />
+      </div>
       <InputWithLabel
         id={Ids.INPUT_EMAIL}
         label="メールアドレス"
@@ -35,6 +42,10 @@ export const CheckoutDialog: VFC<Props> = ({ isOpen, onClose }) => {
         className={styles.form}
         errorMessage={phoneErrorMessage}
       />
+      <p className={styles.term}>
+        <PrimaryLink href="/terms" text="利用規約・個人情報取扱条項" />
+        に同意して
+      </p>
       <PrimaryButton text="次へ" onClick={onClose} className={styles.submitButton} type="submit" />
     </Dialog>
   );

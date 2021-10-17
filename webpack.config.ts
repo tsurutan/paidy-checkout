@@ -1,5 +1,6 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
+import CopyPlugin from 'copy-webpack-plugin';
 import path from 'path';
 import { Configuration } from 'webpack';
 
@@ -10,7 +11,12 @@ const config: Configuration = {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
   },
-  plugins: [new HtmlWebpackPlugin()],
+  plugins: [
+    new HtmlWebpackPlugin(),
+    new CopyPlugin({
+      patterns: [{ from: 'public' }],
+    }),
+  ],
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.scss', '.css'],
     plugins: [new TsconfigPathsPlugin()],

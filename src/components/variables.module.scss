@@ -1,16 +1,17 @@
 
 // color
 $blue: #4793eb;
-$blue-dark: #2a64cb;
+$dark-blue: #2a64cb;
 $white: #fff;
+$dark-white: #f6f8fa;
 $black: #222;
 $grey: #596063;
-$grey-light: #d3d7db;
-$red: #c00;
+$light-grey: #d3d7db;
+$red: #f44336;
 
 $primary: $blue;
-$primary-dark: $blue-dark;
-$border: $grey-light;
+$primary-dark: $dark-blue;
+$border: $light-grey;
 
 // dimens
 $pc-breakpoint: 1024px;

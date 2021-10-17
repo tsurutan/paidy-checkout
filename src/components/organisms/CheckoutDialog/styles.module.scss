@@ -1,5 +1,30 @@
+@use '~components/variables.module.scss' as *;
 
 $side-padding: 3rem;
+
+.itemTitle {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.itemPrice {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
+}
+
+.paidyLogo {
+  height: 5rem;
+  width: 5rem;
+}
+
+.header {
+  align-items: center;
+  background-color: $dark-white;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem $side-padding;
+}
 
 .submitButton {
   display: block;
@@ -9,6 +34,12 @@ $side-padding: 3rem;
 }
 
 .form {
-  margin-bottom: 2rem;
+  margin-top: 3rem;
   padding: 0 $side-padding;
+}
+
+.term {
+  font-size: 1.2rem;
+  margin-top: 16rem;
+  text-align: center;
 }

@@ -32,6 +32,7 @@ export const InputWithLabel: VFC<Props> = ({
       placeholder={placeholder}
       id={id}
       className={styles.input}
+      isError={errorMessage != null}
     />
     {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
   </div>

@@ -10,12 +10,21 @@ type Props = {
   value: string;
   placeholder?: string;
   className?: string;
+  isError?: boolean;
 };
 
-export const Input: VFC<Props> = ({ id, type, onChange, value, placeholder, className }) => (
+export const Input: VFC<Props> = ({
+  id,
+  type,
+  onChange,
+  value,
+  placeholder,
+  className,
+  isError,
+}) => (
   <input
     id={id}
-    className={classNames(styles.container, className)}
+    className={classNames(styles.container, className, { [styles.error]: isError })}
     type={type}
     onChange={onChange}
     value={value}
