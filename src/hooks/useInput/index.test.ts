@@ -63,8 +63,8 @@ describe(useInput.name, () => {
         actInputValue(invalidValue);
       });
 
-      it('should not update value', () => {
-        expect(result.current[0]).not.toEqual(invalidValue);
+      it('should update value', () => {
+        expect(result.current[0]).toEqual(invalidValue);
       });
 
       it('should update error message', () => {

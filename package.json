@@ -7,7 +7,6 @@
     "test": "jest",
     "dev": "webpack-dev-server --config webpack.config.dev.ts",
     "build": "webpack",
-    "watch-scss": "tsm src --watch",
     "gen:component": "hygen new component",
     "prepare": "husky install"
   },

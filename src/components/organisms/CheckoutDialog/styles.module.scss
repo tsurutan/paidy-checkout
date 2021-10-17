@@ -1,6 +1,14 @@
+
+$side-padding: 3rem;
+
 .submitButton {
   display: block;
   margin: 1rem auto;
   max-width: 35rem;
   width: 100%;
+}
+
+.form {
+  margin-bottom: 2rem;
+  padding: 0 $side-padding;
 }

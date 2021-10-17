@@ -9,15 +9,8 @@ export const useInput = (validator?: StringValidator): UseInputReturnType => {
 
   const onChange: ChangeEventHandler<HTMLInputElement> = useCallback((event) => {
     const { value: eventValue } = event.target;
-    const validationResult = validator?.(eventValue);
+    setErrorMessage(validator?.(eventValue));
 
-    if (validationResult != null) {
-      setErrorMessage(validationResult);
-      // If there is validation error, stop updating value.
-      return;
-    }
-
-    setErrorMessage(undefined);
     setValue(eventValue);
   }, []);
 
