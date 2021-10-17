@@ -1,16 +1,18 @@
 @use '~components/variables.module.scss' as *;
 
-$side-padding: 3rem;
+$side-padding: 2.5rem;
 
 .itemTitle {
+  font-family: $en-font;
   font-size: 1.4rem;
   font-weight: bold;
 }
 
 .itemPrice {
-  font-size: 2rem;
+  font-family: $digit-font;
+  font-size: 2.2rem;
   font-weight: bold;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
 .paidyLogo {
@@ -28,7 +30,7 @@ $side-padding: 3rem;
 
 .submitButton {
   display: block;
-  margin: 1rem auto;
+  margin: 1rem auto 3rem;
   max-width: 35rem;
   width: 100%;
 }

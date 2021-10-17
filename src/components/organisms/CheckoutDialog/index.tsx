@@ -20,7 +20,7 @@ export const CheckoutDialog: VFC<Props> = ({ isOpen, onClose }) => {
       <div className={styles.header}>
         <div className={styles.itemInformation}>
           <p className={styles.itemTitle}>SHOP NAME</p>
-          <p className={styles.itemPrice}>￥ 99,999</p>
+          <p className={styles.itemPrice}>¥99,999</p>
         </div>
         <CircleImage imageUrl="/logos/paidy.png" alt="paidy logo" className={styles.paidyLogo} />
       </div>
