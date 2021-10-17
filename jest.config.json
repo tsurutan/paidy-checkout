@@ -1,0 +1,24 @@
+{
+  "testEnvironment": "jsdom",
+  "roots": [
+    "<rootDir>/src"
+  ],
+  "testPathIgnorePatterns": [
+    "<rootDir>/dist/",
+    "<rootDir>/node_modules/"
+  ],
+  "transform": {
+    "^.+\\.(ts|tsx)$": "babel-jest"
+  },
+  "moduleFileExtensions": [
+    "ts",
+    "tsx",
+    "js"
+  ],
+  "globals": {
+    "ts-jest": {
+      "tsconfig": "<rootDir>/tsconfig.json"
+    }
+  },
+  "clearMocks": true
+}

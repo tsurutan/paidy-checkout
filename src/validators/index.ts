@@ -1,0 +1,1 @@
+export { StringValidator } from './types';
