@@ -1,6 +1,12 @@
 import { ErrorMessages } from 'consts';
 import { StringValidator } from 'validators';
 
+// range: this is to check whether the character of phone is in range or not.
+// errorMessage: this is error message when the character of phone is out of range.
+
+// Actually if you use regex, it will be more simple but it maybe difficult to provide
+// error message in detail.
+
 type PhoneCondition = {
   readonly range: Set<string>;
   readonly errorMessage: string;
@@ -43,12 +49,14 @@ const phoneConditions: PhoneCondition[] = [
   allDigitAcceptance, // from 0 to 9
 ];
 
-// This validation is executed when you check
 export const phoneValidator: StringValidator = (value) => {
   let errorMessage: string | undefined;
+
+  // If the length are over phone length then return error message.
   if (value.length > phoneConditions.length) return ErrorMessages.PLEASE_INPUT_CORRECT_PHONE_NUMBER;
 
   value.split('').every((character, index) => {
+    // if character in range, then value is valid phone number format.
     const isValid = phoneConditions[index].range.has(character);
     if (!isValid) {
       errorMessage = phoneConditions[index].errorMessage;

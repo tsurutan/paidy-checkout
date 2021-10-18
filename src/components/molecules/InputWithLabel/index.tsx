@@ -1,11 +1,10 @@
 import classNames from 'classnames';
 import { Input, InputLabel } from 'components/atoms';
-import { Id } from 'consts';
 import { ChangeEventHandler, HTMLInputTypeAttribute, VFC } from 'react';
 import styles from './styles.module.scss';
 
 type Props = {
-  id: Id;
+  id: string;
   label: string;
   value: string;
   onChange: ChangeEventHandler<HTMLInputElement>;

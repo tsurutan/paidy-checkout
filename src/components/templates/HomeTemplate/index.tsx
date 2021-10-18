@@ -2,9 +2,10 @@ import { CheckoutDialog } from 'components/organisms';
 import { useCallback, useState, VFC } from 'react';
 import styles from './styles.module.scss';
 
+// This component is responsible for layout.
 export const HomeTemplate: VFC = () => {
+  // This is the sample function to open dialog.
   const [isOpenDialog, setIsOpenDialog] = useState(false);
-
   const showDialog = useCallback(() => {
     setIsOpenDialog(true);
   }, []);
