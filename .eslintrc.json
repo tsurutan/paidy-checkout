@@ -29,7 +29,10 @@
         "@typescript-eslint"
     ],
     "rules": {
-      "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.ts", "*.config.ts", "*.config.dev.ts"]}],
+      "import/no-extraneous-dependencies": ["error", {
+          "devDependencies": ["**/*.test.ts", "**/*.test.tsx", "*.config.ts", "*.config.dev.ts", "jest-setup.ts"]
+        }
+      ],
       "react/jsx-filename-extension": ["error", { "extensions": [".tsx", ".jsx"] }],
       "react/jsx-uses-react": "off",
       "react/react-in-jsx-scope": "off",

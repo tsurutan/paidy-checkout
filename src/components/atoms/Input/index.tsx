@@ -1,10 +1,9 @@
 import classNames from 'classnames';
-import { Id } from 'consts';
 import { ChangeEventHandler, HTMLInputTypeAttribute, VFC } from 'react';
 import styles from './styles.module.scss';
 
 type Props = {
-  id: Id;
+  id: string;
   type?: HTMLInputTypeAttribute;
   onChange: ChangeEventHandler<HTMLInputElement>;
   onBlur: () => void;

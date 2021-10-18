@@ -35,6 +35,7 @@ export const CheckoutDialog: VFC<Props> = ({ isOpen, onClose }) => {
       </div>
       <InputWithLabel
         id={Ids.INPUT_EMAIL}
+        type="email"
         label="メールアドレス"
         value={email}
         onChange={onChangeEmail}
@@ -44,6 +45,7 @@ export const CheckoutDialog: VFC<Props> = ({ isOpen, onClose }) => {
       />
       <InputWithLabel
         id={Ids.INPUT_PHONE}
+        type="tel"
         label="携帯電話番号"
         value={phone}
         onChange={onChangePhone}
