@@ -9,6 +9,7 @@ type Props = {
   label: string;
   value: string;
   onChange: ChangeEventHandler<HTMLInputElement>;
+  onBlur?: () => void;
   errorMessage?: string;
   placeholder?: string;
   type?: HTMLInputTypeAttribute;
@@ -20,6 +21,7 @@ export const InputWithLabel: VFC<Props> = ({
   label,
   value,
   onChange,
+  onBlur,
   placeholder,
   errorMessage,
   className,
@@ -28,6 +30,7 @@ export const InputWithLabel: VFC<Props> = ({
     <InputLabel text={label} htmlFor={id} className={styles.label} />
     <Input
       onChange={onChange}
+      onBlur={onBlur}
       value={value}
       placeholder={placeholder}
       id={id}

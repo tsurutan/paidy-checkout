@@ -7,6 +7,7 @@ type Props = {
   id: Id;
   type?: HTMLInputTypeAttribute;
   onChange: ChangeEventHandler<HTMLInputElement>;
+  onBlur: () => void;
   value: string;
   placeholder?: string;
   className?: string;
@@ -17,6 +18,7 @@ export const Input: VFC<Props> = ({
   id,
   type,
   onChange,
+  onBlur,
   value,
   placeholder,
   className,
@@ -27,6 +29,7 @@ export const Input: VFC<Props> = ({
     className={classNames(styles.container, className, { [styles.error]: isError })}
     type={type}
     onChange={onChange}
+    onBlur={onBlur}
     value={value}
     placeholder={placeholder}
   />

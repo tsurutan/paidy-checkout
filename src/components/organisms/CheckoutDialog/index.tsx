@@ -1,9 +1,10 @@
 import { CircleImage, PrimaryButton, PrimaryLink } from 'components/atoms';
 import { Dialog, InputWithLabel } from 'components/molecules';
-import { Ids } from 'consts';
+import { ErrorMessages, Ids } from 'consts';
 import { useInput } from 'hooks';
 import { VFC } from 'react';
 import { phoneValidator } from 'validators';
+import { stringLengthValidator } from 'validators/stringLengthValidator';
 import styles from './styles.module.scss';
 
 type Props = {
@@ -11,9 +12,17 @@ type Props = {
   readonly onClose: () => void;
 };
 
+const focusLeavePhoneValidator = stringLengthValidator(
+  13,
+  ErrorMessages.PLEASE_INPUT_CORRECT_PHONE_NUMBER,
+);
+
 export const CheckoutDialog: VFC<Props> = ({ isOpen, onClose }) => {
   const [email, onChangeEmail, emailErrorMessage] = useInput();
-  const [phone, onChangePhone, phoneErrorMessage] = useInput(phoneValidator);
+  const [phone, onChangePhone, phoneErrorMessage, onBlurPhone] = useInput({
+    inputValidator: phoneValidator,
+    focusLeaveValidator: focusLeavePhoneValidator,
+  });
 
   return (
     <Dialog isOpen={isOpen} onClose={onClose}>
@@ -38,6 +47,7 @@ export const CheckoutDialog: VFC<Props> = ({ isOpen, onClose }) => {
         label="携帯電話番号"
         value={phone}
         onChange={onChangePhone}
+        onBlur={onBlurPhone}
         placeholder="090-1234-5678"
         className={styles.form}
         errorMessage={phoneErrorMessage}
