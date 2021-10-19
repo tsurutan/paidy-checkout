@@ -12,7 +12,7 @@ export const Dialog: VFC<Props> = ({ children, onClose, isOpen }) => {
 
   return (
     <div className={styles.container}>
-      {/* If the background is clicked, dailog is closed */}
+      {/* If this background component is clicked, dailog is closed */}
       <div className={styles.background} onClick={onClose} role="none" />
       <div className={styles.content} role="dialog">
         {children}

@@ -17,6 +17,7 @@ type Props = {
 
 export const InputWithLabel: VFC<Props> = ({
   id,
+  type,
   label,
   value,
   onChange,
@@ -32,6 +33,7 @@ export const InputWithLabel: VFC<Props> = ({
       onBlur={onBlur}
       value={value}
       placeholder={placeholder}
+      type={type}
       id={id}
       className={styles.input}
       isError={errorMessage != null}
