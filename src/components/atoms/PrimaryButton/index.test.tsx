@@ -1,11 +1,11 @@
-import { fireEvent, render, screen } from "testUtils";
-import { PrimaryButton } from "./index";
+import { fireEvent, render, screen } from 'testUtils';
+import { PrimaryButton } from './index';
 
 describe(PrimaryButton.name, () => {
-  const text = "Press me!";
-  const className = "paidy-class";
+  const text = 'Press me!';
+  const className = 'paidy-class';
   const onClick = jest.fn();
-  const type = "submit";
+  const type = 'submit';
 
   beforeEach(() => {
     render(
@@ -18,21 +18,21 @@ describe(PrimaryButton.name, () => {
     );
   });
 
-  it("should show text", () => {
-    expect(screen.getByRole("button")).toHaveTextContent(text);
+  it('should show text', () => {
+    expect(screen.getByRole('button')).toHaveTextContent(text);
   });
 
-  it("should have type", () => {
-    expect(screen.getByRole("button")).toHaveAttribute("type", type);
+  it('should have type', () => {
+    expect(screen.getByRole('button')).toHaveAttribute('type', type);
   });
 
-  it("should have class", () => {
-    expect(screen.getByRole("button")).toHaveClass(className);
+  it('should have class', () => {
+    expect(screen.getByRole('button')).toHaveClass(className);
   });
 
-  describe("when button is clicked", () => {
-    it("should call onClick", () => {
-      fireEvent.click(screen.getByRole("button"));
+  describe('when button is clicked', () => {
+    it('should call onClick', () => {
+      fireEvent.click(screen.getByRole('button'));
       expect(onClick).toBeCalled();
     });
   });

@@ -1,15 +1,15 @@
-import { fireEvent, render, screen } from "testUtils";
-import { InputWithLabel } from "./index";
+import { fireEvent, render, screen } from 'testUtils';
+import { InputWithLabel } from './index';
 
 describe(InputWithLabel.name, () => {
-  const id = "paidy-input";
-  const value = "Press me!";
-  const label = "paidy-label";
-  const className = "paidy-class";
+  const id = 'paidy-input';
+  const value = 'Press me!';
+  const label = 'paidy-label';
+  const className = 'paidy-class';
   const onChange = jest.fn();
   const onBlur = jest.fn();
-  const type = "email";
-  const placeholder = "some-placeholder";
+  const type = 'email';
+  const placeholder = 'some-placeholder';
 
   const renderInputWithLabel = (errorMessage?: string) => {
     render(
@@ -27,64 +27,64 @@ describe(InputWithLabel.name, () => {
     );
   };
 
-  it("should have id", () => {
+  it('should have id', () => {
     renderInputWithLabel();
-    expect(screen.getByRole("textbox")).toHaveAttribute("id", id);
+    expect(screen.getByRole('textbox')).toHaveAttribute('id', id);
   });
 
-  it("should have value", () => {
+  it('should have value', () => {
     renderInputWithLabel();
-    expect(screen.getByRole("textbox")).toHaveAttribute("value", value);
+    expect(screen.getByRole('textbox')).toHaveAttribute('value', value);
   });
 
-  it("should have class", () => {
+  it('should have class', () => {
     renderInputWithLabel();
-    expect(screen.getByRole("textbox").parentNode).toHaveAttribute(
-      "class",
+    expect(screen.getByRole('textbox').parentNode).toHaveAttribute(
+      'class',
       `container ${className}`
     );
   });
 
-  it("should have type", () => {
+  it('should have type', () => {
     renderInputWithLabel();
-    expect(screen.getByRole("textbox")).toHaveAttribute("type", type);
+    expect(screen.getByRole('textbox')).toHaveAttribute('type', type);
   });
 
-  it("should have placeholder", () => {
+  it('should have placeholder', () => {
     renderInputWithLabel();
-    expect(screen.getByRole("textbox")).toHaveAttribute(
-      "placeholder",
+    expect(screen.getByRole('textbox')).toHaveAttribute(
+      'placeholder',
       placeholder
     );
   });
 
-  it("should display label", () => {
+  it('should display label', () => {
     renderInputWithLabel();
     expect(screen.queryByText(label)).toBeInTheDocument();
   });
 
-  describe("when error message is passed", () => {
-    it("should show error message", () => {
-      const errorMessage = "Something error";
+  describe('when error message is passed', () => {
+    it('should show error message', () => {
+      const errorMessage = 'Something error';
       renderInputWithLabel(errorMessage);
       expect(screen.queryByText(errorMessage)).toBeInTheDocument();
     });
   });
 
-  describe("when user is typing", () => {
-    it("should call onChange", () => {
+  describe('when user is typing', () => {
+    it('should call onChange', () => {
       renderInputWithLabel();
-      fireEvent.change(screen.getByRole("textbox"), {
-        target: { value: "090-" }
+      fireEvent.change(screen.getByRole('textbox'), {
+        target: { value: '090-' }
       });
       expect(onChange).toBeCalled();
     });
   });
 
-  describe("when input focus is left", () => {
-    it("should call onBlur", () => {
+  describe('when input focus is left', () => {
+    it('should call onBlur', () => {
       renderInputWithLabel();
-      fireEvent.focusOut(screen.getByRole("textbox"));
+      fireEvent.focusOut(screen.getByRole('textbox'));
       expect(onBlur).toBeCalled();
     });
   });

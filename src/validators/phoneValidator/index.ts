@@ -1,5 +1,5 @@
-import { ErrorMessages } from "consts";
-import { StringValidator } from "validators";
+import { ErrorMessages } from 'consts';
+import { StringValidator } from 'validators';
 
 // range: this is to check whether the character of phone is in range or not.
 // errorMessage: this is error message when the character of phone is out of range.
@@ -14,19 +14,19 @@ type PhoneCondition = {
 
 const zeroAcceptance: PhoneCondition = {
   // Using set because access order is O(1)
-  range: new Set(["0"]),
+  range: new Set(['0']),
   errorMessage: ErrorMessages.PLEASE_INPUT_JAPANESE_PHONE_NUMBER
 };
 const eightOrNineAcceptance: PhoneCondition = {
-  range: new Set(["8", "9"]),
+  range: new Set(['8', '9']),
   errorMessage: ErrorMessages.PLEASE_INPUT_JAPANESE_PHONE_NUMBER
 };
 const allDigitAcceptance: PhoneCondition = {
-  range: new Set(["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]),
+  range: new Set(['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']),
   errorMessage: ErrorMessages.PLEASE_INPUT_NUMBER
 };
 const dashAcceptance: PhoneCondition = {
-  range: new Set(["-"]),
+  range: new Set(['-']),
   errorMessage: ErrorMessages.PLEASE_INPUT_DASH
 };
 
@@ -57,7 +57,7 @@ export const phoneValidator: StringValidator = (value) => {
   if (value.length > phoneConditions.length)
     return ErrorMessages.PLEASE_INPUT_CORRECT_PHONE_NUMBER;
 
-  value.split("").every((character, index) => {
+  value.split('').every((character, index) => {
     // if character in range, then value is valid phone number format.
     const isValid = phoneConditions[index].range.has(character);
     if (!isValid) {

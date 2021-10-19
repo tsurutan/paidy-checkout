@@ -60,8 +60,8 @@ describe(useInput.name, () => {
       result = renderHook(() =>
         useInput({
           inputValidator,
-          focusLeaveValidator,
-        }),
+          focusLeaveValidator
+        })
       ).result;
     });
 

@@ -24,7 +24,7 @@ export const InputWithLabel: VFC<Props> = ({
   onBlur,
   placeholder,
   errorMessage,
-  className,
+  className
 }) => (
   <div className={classNames(styles.container, className)}>
     <InputLabel text={label} htmlFor={id} className={styles.label} />

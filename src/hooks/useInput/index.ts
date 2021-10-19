@@ -1,5 +1,5 @@
-import { ChangeEventHandler, useCallback, useState } from "react";
-import { StringValidator } from "validators";
+import { ChangeEventHandler, useCallback, useState } from 'react';
+import { StringValidator } from 'validators';
 
 export type UseInputProps = {
   inputValidator?: StringValidator;
@@ -17,7 +17,7 @@ export const useInput = ({
   inputValidator, // validating value when user is typing.
   focusLeaveValidator // validating value when input focus is left.
 }: UseInputProps = {}): UseInputReturnType => {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState('');
   const [errorMessage, setErrorMessage] = useState<string | undefined>();
 
   // This method is validating value when user is typing

@@ -1,11 +1,11 @@
-import { CircleImage, PrimaryButton, PrimaryLink } from "components/atoms";
-import { Dialog, InputWithLabel } from "components/molecules";
-import { ErrorMessages, Ids } from "consts";
-import { useInput } from "hooks";
-import { VFC } from "react";
-import { phoneValidator } from "validators";
-import { stringLengthValidator } from "validators/stringLengthValidator";
-import styles from "./styles.module.scss";
+import { CircleImage, PrimaryButton, PrimaryLink } from 'components/atoms';
+import { Dialog, InputWithLabel } from 'components/molecules';
+import { ErrorMessages, Ids } from 'consts';
+import { useInput } from 'hooks';
+import { VFC } from 'react';
+import { phoneValidator } from 'validators';
+import { stringLengthValidator } from 'validators/stringLengthValidator';
+import styles from './styles.module.scss';
 
 type Props = {
   readonly shopName: string;

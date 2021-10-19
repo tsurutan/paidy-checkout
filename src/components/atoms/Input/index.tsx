@@ -21,11 +21,13 @@ export const Input: VFC<Props> = ({
   value,
   placeholder,
   className,
-  isError,
+  isError
 }) => (
   <input
     id={id}
-    className={classNames(styles.container, className, { [styles.error]: isError })}
+    className={classNames(styles.container, className, {
+      [styles.error]: isError
+    })}
     type={type}
     onChange={onChange}
     onBlur={onBlur}
