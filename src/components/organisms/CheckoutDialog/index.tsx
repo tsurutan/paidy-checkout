@@ -8,6 +8,8 @@ import { stringLengthValidator } from 'validators/stringLengthValidator';
 import styles from './styles.module.scss';
 
 type Props = {
+  readonly shopName: string;
+  readonly price: number;
   readonly isOpen: boolean;
   readonly onClose: () => void;
 };
@@ -19,7 +21,7 @@ const focusLeavePhoneValidator = stringLengthValidator(
   ErrorMessages.PLEASE_INPUT_CORRECT_PHONE_NUMBER,
 );
 
-export const CheckoutDialog: VFC<Props> = ({ isOpen, onClose }) => {
+export const CheckoutDialog: VFC<Props> = ({ isOpen, onClose, shopName, price }) => {
   const [email, onChangeEmail, emailErrorMessage] = useInput();
   const [phone, onChangePhone, phoneErrorMessage, onBlurPhone] = useInput({
     inputValidator: phoneValidator,
@@ -31,8 +33,8 @@ export const CheckoutDialog: VFC<Props> = ({ isOpen, onClose }) => {
       <form>
         <div className={styles.header}>
           <div className={styles.itemInformation}>
-            <p className={styles.itemTitle}>SHOP NAME</p>
-            <p className={styles.itemPrice}>¥99,999</p>
+            <p className={styles.itemTitle}>{shopName}</p>
+            <p className={styles.itemPrice}>¥{price.toLocaleString()}</p>
           </div>
           <CircleImage imageUrl="/logos/paidy.png" alt="paidy logo" className={styles.paidyLogo} />
         </div>

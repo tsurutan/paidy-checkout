@@ -18,7 +18,12 @@ export const HomeTemplate: VFC = () => {
       <button type="button" onClick={showDialog}>
         Show Dialog
       </button>
-      <CheckoutDialog isOpen={isOpenDialog} onClose={closeDialog} />
+      <CheckoutDialog
+        isOpen={isOpenDialog}
+        onClose={closeDialog}
+        shopName="SHOP NAME"
+        price={99999}
+      />
     </div>
   );
 };
