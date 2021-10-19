@@ -15,7 +15,7 @@ type Props = {
 };
 
 // This validator check whether text length is 13 or not
-// because corrent phone number length is 13.
+// because correct phone number length is 13.
 const focusLeavePhoneValidator = stringLengthValidator(
   13,
   ErrorMessages.PLEASE_INPUT_CORRECT_PHONE_NUMBER,

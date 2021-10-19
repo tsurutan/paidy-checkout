@@ -21,12 +21,16 @@ describe(CheckoutDialog.name, () => {
     expect(screen.queryByText('メールアドレス')).toBeInTheDocument();
   });
 
-  // it('should have email input', () => {
-  //   expect(screen.queryByRole('textbox')).toBeInTheDocument();
-  // });
+  it('should have email input', () => {
+    expect(screen.queryAllByRole('textbox')[0]).toHaveAttribute('type', 'email');
+  });
 
   it('should show phone number label', () => {
     expect(screen.queryByText('携帯電話番号')).toBeInTheDocument();
+  });
+
+  it('should have tel input', () => {
+    expect(screen.queryAllByRole('textbox')[1]).toHaveAttribute('type', 'tel');
   });
 
   it('should show submit button', () => {
