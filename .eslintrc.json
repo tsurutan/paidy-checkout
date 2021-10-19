@@ -8,7 +8,8 @@
         "plugin:react/recommended",
         "airbnb",
         "plugin:jsx-a11y/recommended",
-        "plugin:react-form-fields/recommended"
+        "plugin:react-form-fields/recommended",
+        "prettier"
     ],
     "parser": "@typescript-eslint/parser",
     "settings": {
@@ -30,7 +31,7 @@
     ],
     "rules": {
       "import/no-extraneous-dependencies": ["error", {
-          "devDependencies": ["**/*.test.ts", "**/*.test.tsx", "*.config.ts", "*.config.dev.ts", "jest-setup.ts"]
+          "devDependencies": ["**/*.test.ts", "**/*.test.tsx", "*.config.ts", "*.config.dev.ts", "jest-setup.ts", "src/testUtils.tsx"]
         }
       ],
       "react/jsx-filename-extension": ["error", { "extensions": [".tsx", ".jsx"] }],
@@ -45,10 +46,12 @@
           "ts": "never",
           "tsx": "never"
         }
-     ],
+      ],
       "import/prefer-default-export": "off",
       "react/prop-types": "off",
       "react/button-has-type": "off",
-      "jsx-a11y/click-events-have-key-events": "off"
+      "jsx-a11y/click-events-have-key-events": "off",
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": ["error"]
     }
 }

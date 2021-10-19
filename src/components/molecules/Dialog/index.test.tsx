@@ -1,35 +1,35 @@
-import { fireEvent, render, screen } from '@testing-library/react';
-import { Dialog } from './index';
+import { fireEvent, render, screen } from "testUtils";
+import { Dialog } from "./index";
 
 describe(Dialog.name, () => {
-  const text = 'Press me!';
+  const text = "Press me!";
   const onClose = jest.fn();
 
   const renderDialog = (isOpen: boolean = true) => {
     render(
       <Dialog isOpen={isOpen} onClose={onClose}>
         {text}
-      </Dialog>,
+      </Dialog>
     );
   };
 
-  it('should show text', () => {
+  it("should show text", () => {
     renderDialog();
-    expect(screen.getByRole('dialog')).toHaveTextContent(text);
+    expect(screen.getByRole("dialog")).toHaveTextContent(text);
   });
 
-  describe('when background is clicked', () => {
-    it('should call onClose', () => {
+  describe("when background is clicked", () => {
+    it("should call onClose", () => {
       renderDialog();
-      fireEvent.click(screen.getByRole('none'));
+      fireEvent.click(screen.getByRole("none"));
       expect(onClose).toBeCalled();
     });
   });
 
-  describe('when isOpen is false', () => {
-    it('should not display dialog', () => {
+  describe("when isOpen is false", () => {
+    it("should not display dialog", () => {
       renderDialog(false);
-      expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+      expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
     });
   });
 });

@@ -1,5 +1,5 @@
-import { ErrorMessages } from 'consts';
-import { StringValidator } from 'validators';
+import { ErrorMessages } from "consts";
+import { StringValidator } from "validators";
 
 // range: this is to check whether the character of phone is in range or not.
 // errorMessage: this is error message when the character of phone is out of range.
@@ -13,20 +13,21 @@ type PhoneCondition = {
 };
 
 const zeroAcceptance: PhoneCondition = {
-  range: new Set(['0']),
-  errorMessage: ErrorMessages.PLEASE_INPUT_JAPANESE_PHONE_NUMBER,
+  // Using set because access order is O(1)
+  range: new Set(["0"]),
+  errorMessage: ErrorMessages.PLEASE_INPUT_JAPANESE_PHONE_NUMBER
 };
 const eightOrNineAcceptance: PhoneCondition = {
-  range: new Set(['8', '9']),
-  errorMessage: ErrorMessages.PLEASE_INPUT_JAPANESE_PHONE_NUMBER,
+  range: new Set(["8", "9"]),
+  errorMessage: ErrorMessages.PLEASE_INPUT_JAPANESE_PHONE_NUMBER
 };
 const allDigitAcceptance: PhoneCondition = {
-  range: new Set(['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']),
-  errorMessage: ErrorMessages.PLEASE_INPUT_NUMBER,
+  range: new Set(["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]),
+  errorMessage: ErrorMessages.PLEASE_INPUT_NUMBER
 };
 const dashAcceptance: PhoneCondition = {
-  range: new Set(['-']),
-  errorMessage: ErrorMessages.PLEASE_INPUT_DASH,
+  range: new Set(["-"]),
+  errorMessage: ErrorMessages.PLEASE_INPUT_DASH
 };
 
 const phoneConditions: PhoneCondition[] = [
@@ -46,16 +47,17 @@ const phoneConditions: PhoneCondition[] = [
   allDigitAcceptance, // from 0 to 9
   allDigitAcceptance, // from 0 to 9
   allDigitAcceptance, // from 0 to 9
-  allDigitAcceptance, // from 0 to 9
+  allDigitAcceptance // from 0 to 9
 ];
 
 export const phoneValidator: StringValidator = (value) => {
   let errorMessage: string | undefined;
 
   // If the length are over phone length then return error message.
-  if (value.length > phoneConditions.length) return ErrorMessages.PLEASE_INPUT_CORRECT_PHONE_NUMBER;
+  if (value.length > phoneConditions.length)
+    return ErrorMessages.PLEASE_INPUT_CORRECT_PHONE_NUMBER;
 
-  value.split('').every((character, index) => {
+  value.split("").every((character, index) => {
     // if character in range, then value is valid phone number format.
     const isValid = phoneConditions[index].range.has(character);
     if (!isValid) {

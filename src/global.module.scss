@@ -1,4 +1,5 @@
 @use '~components/mixins.module.scss' as *;
+@use '~components/variables.module.scss' as *;
 
 // To use rem, set up the root font-size
 html {
@@ -15,8 +16,15 @@ html {
 
 // Set font size html, but it maybe too small,
 // So reset font-size to 1.6 * (10px or 9 px or 8px)
-
-// TODO: fix this font-size
 body {
   font-size: 1.6em;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: $black;
 }
