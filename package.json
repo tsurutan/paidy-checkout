@@ -6,8 +6,7 @@
   "scripts": {
     "test": "jest",
     "dev": "webpack-dev-server --config webpack.config.dev.ts",
-    "build": "webpack",
-    "gen:component": "hygen new component",
+    "start": "webpack serve",
     "prepare": "husky install"
   },
   "repository": {
@@ -49,11 +48,9 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "html-webpack-plugin": "^5.3.2",
     "husky": "^7.0.2",
-    "hygen": "^6.1.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.2.5",
     "lint-staged": "^11.2.3",
-    "node-sass": "^4.14.1",
     "prettier": "^2.4.1",
     "prettier-eslint": "^8.2.2",
     "prettier-eslint-cli": "^4.2.1",

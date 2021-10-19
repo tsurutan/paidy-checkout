@@ -1,11 +1,11 @@
-import { CircleImage, PrimaryButton, PrimaryLink } from 'components/atoms';
-import { Dialog, InputWithLabel } from 'components/molecules';
-import { ErrorMessages, Ids } from 'consts';
-import { useInput } from 'hooks';
-import { VFC } from 'react';
-import { phoneValidator } from 'validators';
-import { stringLengthValidator } from 'validators/stringLengthValidator';
-import styles from './styles.module.scss';
+import { CircleImage, PrimaryButton, PrimaryLink } from "components/atoms";
+import { Dialog, InputWithLabel } from "components/molecules";
+import { ErrorMessages, Ids } from "consts";
+import { useInput } from "hooks";
+import { VFC } from "react";
+import { phoneValidator } from "validators";
+import { stringLengthValidator } from "validators/stringLengthValidator";
+import styles from "./styles.module.scss";
 
 type Props = {
   readonly shopName: string;
@@ -18,26 +18,35 @@ type Props = {
 // because correct phone number length is 13.
 const focusLeavePhoneValidator = stringLengthValidator(
   13,
-  ErrorMessages.PLEASE_INPUT_CORRECT_PHONE_NUMBER,
+  ErrorMessages.PLEASE_INPUT_CORRECT_PHONE_NUMBER
 );
 
-export const CheckoutDialog: VFC<Props> = ({ isOpen, onClose, shopName, price }) => {
+export const CheckoutDialog: VFC<Props> = ({
+  isOpen,
+  onClose,
+  shopName,
+  price
+}) => {
   const [email, onChangeEmail, emailErrorMessage] = useInput();
   const [phone, onChangePhone, phoneErrorMessage, onBlurPhone] = useInput({
     inputValidator: phoneValidator,
-    focusLeaveValidator: focusLeavePhoneValidator,
+    focusLeaveValidator: focusLeavePhoneValidator
   });
 
   return (
     <Dialog isOpen={isOpen} onClose={onClose}>
-      <form>
-        <div className={styles.header}>
-          <div className={styles.itemInformation}>
-            <p className={styles.itemTitle}>{shopName}</p>
-            <p className={styles.itemPrice}>¥{price.toLocaleString()}</p>
-          </div>
-          <CircleImage imageUrl="/logos/paidy.png" alt="paidy logo" className={styles.paidyLogo} />
+      <div className={styles.header}>
+        <div className={styles.itemInformation}>
+          <p className={styles.itemTitle}>{shopName}</p>
+          <p className={styles.itemPrice}>¥{price.toLocaleString()}</p>
         </div>
+        <CircleImage
+          imageUrl="/logos/paidy.png"
+          alt="paidy logo"
+          className={styles.paidyLogo}
+        />
+      </div>
+      <form>
         <InputWithLabel
           id={Ids.INPUT_EMAIL}
           type="email"

@@ -10,11 +10,12 @@ type Props = {
 
 export const Dialog: VFC<Props> = ({ children, onClose, isOpen }) => {
   const [container, setContainer] = useState<HTMLElement | undefined>();
-  if (!isOpen) return null;
 
   useEffect(() => {
     setContainer(document.getElementById("dialog"));
   }, []);
+
+  if (!isOpen) return null;
 
   // use createPortal to deal with parent node which uses position: relative
   return container
